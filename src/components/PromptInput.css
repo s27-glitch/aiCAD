@@ -1,0 +1,86 @@
+.prompt-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.prompt-input {
+  background: #0f1629;
+  border: 1px solid #2d3561;
+  color: #e2e8f0;
+  padding: 0.75rem;
+  border-radius: 6px;
+  font-family: inherit;
+  font-size: 0.9rem;
+  min-height: 100px;
+  resize: vertical;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.prompt-input:focus {
+  border-color: #00d4ff;
+}
+
+.prompt-input::placeholder {
+  color: #64748b;
+}
+
+.prompt-input:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.generate-btn {
+  background: linear-gradient(135deg, #00d4ff, #7c3aed);
+  border: none;
+  color: white;
+  padding: 0.75rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.generate-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(0, 212, 255, 0.3);
+}
+
+.generate-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.examples {
+  border-top: 1px solid #2d3561;
+  padding-top: 1rem;
+}
+
+.examples-title {
+  font-size: 0.8rem;
+  color: #64748b;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+.example-btn {
+  display: block;
+  width: 100%;
+  background: #0f1629;
+  border: 1px solid #2d3561;
+  color: #cbd5e1;
+  padding: 0.5rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  margin-bottom: 0.5rem;
+  transition: all 0.2s;
+}
+
+.example-btn:hover {
+  background: #1a2646;
+  border-color: #00d4ff;
+  color: #00d4ff;
+}
