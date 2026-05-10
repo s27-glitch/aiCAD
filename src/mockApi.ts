@@ -1,7 +1,7 @@
 // Dummy API for Week 1 testing
 // In Week 2, this will be replaced with real backend calls
 
-export function generateDummyGeometry(prompt: string) {
+export function generateDummyGeometry(_prompt: string) {
   // Create a simple cylinder geometry
   const vertices: number[] = [];
   const indices: number[] = [];
