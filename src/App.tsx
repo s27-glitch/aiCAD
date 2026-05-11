@@ -19,20 +19,29 @@ function App() {
   const [error, setError] = useState<string | null>(null);
 
   const handleGenerate = async (prompt: string) => {
-    setLoading(true);
-    setError(null);
+  setLoading(true);
+  setError(null);
 
-    try {
-      // For Week 1, use dummy data
-      // Week 2: Replace with real API call
-      const data = generateDummyGeometry(prompt);
-      setModel(data);
-    } catch (err) {
-      setError(err instanceof Error ? err.message : 'Unknown error');
-    } finally {
-      setLoading(false);
+  try {
+    // Call FastAPI backend
+    const response = await fetch('http://localhost:8000/api/generate', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ prompt })
+    });
+
+    if (!response.ok) {
+      throw new Error(`Backend error: ${response.statusText}`);
     }
-  };
+
+    const data = await response.json();
+    setModel(data);
+  } catch (err) {
+    setError(err instanceof Error ? err.message : 'Unknown error');
+  } finally {
+    setLoading(false);
+  }
+};
 
   const handleExport = () => {
     if (!model) {
