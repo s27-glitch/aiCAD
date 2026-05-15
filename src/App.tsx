@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import PromptInput from './components/PromptInput';
 import Viewer3D from './components/Viewer3D';
-import { generateDummyGeometry } from './mockApi';
 import './App.css';
 
 interface Model {
